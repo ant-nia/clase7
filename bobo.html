@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trabajos</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: #ffffff;
+        color: black;
+      }
+
+      div#popote {
+        width: 96%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+      }
+
+      div#popote div {
+        border: 1px solid #000;
+        width: calc(46% - 2px);
+        padding: 1%;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+      }
+
+      div#popote div:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      }
+
+      div#popote div img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      div#popote div h2 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+      }
+
+      div#popote div p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="popote"></div>
+
+    <script>
+      const trabajos = [
+        {
+          title: "Proyecto 1",
+          category: "UX",
+          photo: "https://picsum.photos/id/237/600/400",
+          description: "blakjhfkqefkwefwergwr."
+        },
+        {
+          title: "proyecto 2",
+          category: "Diseño Gráfico",
+          photo: "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA",
+          description: "otra descripcion efjbwkefjbwef"
+        },
+        {
+          title: "Prototipo 3",
+          category: "App",
+          photo: "https://picsum.photos/id/239/600/400",
+          description: "okayyyy mas descripciones"
+        },
+        {
+          title: "Audiovisual 1",
+          category: "Video",
+          photo: "https://picsum.photos/id/240/600/400",
+          description: "se podrá poner video??????"
+        }
+      ];
+
+      const contenedor = document.querySelector("#popote");
+
+      trabajos.forEach((t) => {
+        contenedor.innerHTML += `
+          <div>
+            <span class="categoria">${t.category}</span>
+            <img src="${t.photo}" alt="${t.title}">
+            <h2>${t.title}</h2>
+            <p>${t.description}</p>
+          </div>
+        `;
+      });
+    </script>
+  </body>
+</html>
